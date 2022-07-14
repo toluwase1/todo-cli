@@ -68,15 +68,11 @@ func createTodo(title string, description string) []string {
 	return todolist
 }
 
-func deleteTodoById(value int) {
+func deleteTodoById(id int) {
+
 	for i := 0; i < len(todolist); i++ {
-		if i == value {
-			//Deletes the item with such index
+		if i == id {
 			todolist = append(todolist[:i], todolist[i+1:]...)
-			//left := todolist[:value+1]
-			//right := todolist[value:]
-			//todolist = append(todolist, left...)
-			//todolist = append(todolist, right...)
 		}
 	}
 }
@@ -98,7 +94,7 @@ func updateTodo(id int) {
 
 func ListAllTodo() {
 	for i := 0; i < len(todolist); i++ {
-		numberedList := fmt.Sprintf("%d: %s \n", i+1, todolist[i])
+		numberedList := fmt.Sprintf("%d: %s \n", i, todolist[i])
 		fmt.Println(numberedList)
 	}
 }
