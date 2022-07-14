@@ -7,9 +7,9 @@ import (
 var todolist []string
 
 func main() {
-	welcomePage()
 
 	for {
+		welcomePage()
 		var input int
 		_, err := fmt.Scanln(&input)
 		if err != nil {
